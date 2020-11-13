@@ -1,24 +1,31 @@
 import java.util.Scanner;
-import java.lang.*;
- class Quadratic{
-public static void main(String[] args)
-{double a,b,c,r1,r2,d;
-Scanner scan= new Scanner(System.in);
-System.out.println("enter the co-efficients of the quadratic equation a,b and c\n");
- a = scan.nextDouble();
- b = scan.nextDouble();
- c = scan.nextDouble();
-d = b*b- (4*a*c);
-if ( d<0 )
-{ System.out.println(" There are no real solutions for this quadratic equation\n");
- System.exit(0);}
-r1 = (-b + Math.sqrt(d))/(2*a);
-r2 = (-b - Math.sqrt(d))/(2*a);
-if(d==0)
-{ System.out.println("The solutions are real and equal to " + r1 );
+public class lab1{
+public static int det(int a,int b,int c){
+int d=b*b-4*a*c;
+return d;
 }
-else 
-{System.out.println("The real solutions are\n" + r1 + " and " + r2);}
-
+public static void main(String[] args){
+double r1,r2,real,imag;
+Scanner x=new Scanner(System.in);
+System.out.print("enter the a,b,c values:");
+int a=x.nextInt();
+int b=x.nextInt();
+int c=x.nextInt();
+int d=det(a,b,c);
+if(d==0){
+r1=-b+Math.sqrt(d*1.0);
+r2=-b-Math.sqrt(d*1.0);
+System.out.println("the roots are real and equal:"+r1+","+r2);
+}
+if(d>0){
+r1=-b+Math.sqrt(d*1.0);
+r2=-b-Math.sqrt(d*1.0);
+System.out.println("the roots are real but not equal:"+r1+","+r2);
+}
+if(d<0){
+real=-b;
+imag=d;
+System.out.println("the roots are imaginary:"+(real)+"+("+(+1.0*imag)+"i),"+(real)+"+("+(-1.0*imag)+"i)");
+}
 }
 }
