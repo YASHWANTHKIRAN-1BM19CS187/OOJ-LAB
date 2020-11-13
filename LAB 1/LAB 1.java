@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*Scanner;
 import java.lang.*;
  class Quadratic{
 public static void main(String[] args)
